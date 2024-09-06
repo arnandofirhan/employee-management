@@ -166,7 +166,7 @@ class EntityDataTable extends DataTable
                 ->addClass('min-w-100px'),
             Column::make('employee_status1_name_to_text')
                 ->title('<strong>' . __('Tanggal Gabung') . '</strong>')
-                ->name('employee_status_id')
+                ->name('join_date')
                 ->searchable(false)
                 ->orderable(false)
                 ->addClass('min-w-100px'),  

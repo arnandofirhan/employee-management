@@ -39,7 +39,7 @@ return [
     'expand'          => 'Memperluas',
     'expand_all'      => 'Melebarkan semua',
     'explanation'     => 'Penjelasan',
-    'export'          => 'Ekspor',
+    'export'          => 'Export',
     'file'            => 'Mengajukan',
     'files'           => 'File',
     'go_home'         => 'Pulang ke rumah',

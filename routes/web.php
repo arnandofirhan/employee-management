@@ -11,6 +11,8 @@ use App\Http\Controllers\Roles\RoleController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Exports\EmployeesExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +23,7 @@ use App\Exports\EmployeesExport;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/export_employee', [EmployeeController::class, 'export'])->name('export_employee');
 
 Route::middleware(['auth', 'active.user.activity'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -91,10 +94,7 @@ Route::middleware(['language', 'auth', 'verified'])->group(function () {
         Route::post('import/validate', [EntityController::class, 'validateImport'])->name('import.validate')->middleware('permission:entity.import');
         Route::post('import', [EntityController::class, 'storeImport'])->name('import.store')->middleware('permission:entity.import');
 
-        Route::get('/export-employees', [EmployeeController::class, 'export'])->name('export.employees');
-        Route::get('/export-employees', function () {
-            return Excel::download(new EmployeesExport, 'employees.xlsx');
-        });
+
 
         Route::get('', [EntityController::class, 'index'])->name('index')->middleware('permission:entity.list');
         Route::post('', [EntityController::class, 'store'])->name('store')->middleware('permission:entity.create');

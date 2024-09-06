@@ -18,4 +18,9 @@ class EmployeeStatus extends Model
     {
         return $this->hasMany(Entity::class);
     }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'employee_status_id', 'id');
+    }
 }

@@ -18,8 +18,9 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "maatwebsite/excel": "^3.1",
+        "nesbot/carbon": "^2.72",
         "riskihajar/terbilang": "^2.0",
-        "spatie/laravel-permission": "^6.4",
+        "spatie/laravel-permission": "^6.9",
         "yajra/laravel-datatables": "^10.1"
     },
     "require-dev": {

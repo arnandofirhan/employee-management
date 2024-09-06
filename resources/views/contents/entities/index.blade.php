@@ -88,9 +88,9 @@ $breadcrumbs = [
 
                         @can('entity.export')
                             <a class="btn btn-primary @can('entity.create') ms-4 @endcan"
-                                href="{{ url('/export-employees') }}">
+                            href="{{ url('/export_employee') }}">
                                 <i class="ki-solid ki-plus fs-2"></i>
-                                {{ __('Export') }}
+                                {{ __('Export!') }}
                             </a>
                         @endcan
 

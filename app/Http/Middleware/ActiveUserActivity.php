@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Http\Response; // Pastikan tipe Response dari Illuminate
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 
@@ -16,7 +16,7 @@ class ActiveUserActivity
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
         if (auth()->check() && auth()->user()->userSetting && auth()->user()->userSetting->entity) {
             $expiresAt = Carbon::now()->addMinutes(5);
